@@ -1,12 +1,22 @@
+[build-system]
+requires = ["uv-build"]
+build-backend = "uv_build"
+
 [project]
 name = "maat"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.0.1"
+description = "User scores and reviews TUI for everything u like."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "alembic>=1.18.4",
-    "pathlib>=1.0.1",
-    "pytest>=9.0.2",
     "sqlalchemy>=2.0.48",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
+
+[project.scripts]
+maat = "maat.main:main"
